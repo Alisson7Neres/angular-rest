@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Login</title>
+  </head>
+<body>
+  <form>
+
+    <div class="form-group">
+      <label for="login">E-mail</label>
+      <input type="email" class="form-control" #email="ngModel"  [(ngModel)] = "usuario.login" id="login" name="login" placeholder="Informe o E-mail" required>
+      <div *ngIf="email.invalid">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" #senha="ngModel" [(ngModel)] = "usuario.senha" id="senha" name="senha" placeholder="Informe a senha" required>
+      <div *ngIf="senha.invalid">
+      </div>
+    </div>
+
+    <button id="btnAcessar" [disabled]="email.invalid || senha.invalid" type="button" class="btn btn-success" (click)="login()">Acessar</button>
+    <button id="btnRegistrar" type="button" class="btn btn-warning">Registrar</button>
+
+  </form>
+
+</body>
+
+    <footer class="bg-danger text-center text-white">
+      <div class="container d-flex justify-content-between align-items-center">
+        <section class="container p-4">
+
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+          
+
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-github"></i></a>
+        </section>
+      </div>
+
+      <a href="mailto:alisson.neres@hotmail.com">@Suporte</a>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2021 Copyright:
+          <a class="text-white" href="https://github.com/Alisson7Neres?tab=repositories" target="_blank">Alisson7neres</a>
+        </div>
+      </footer>
+
+</html>

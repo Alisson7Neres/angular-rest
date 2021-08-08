@@ -1,0 +1,45 @@
+<form id="novo">
+
+	<div class="row d-flex justify-content-center">
+		<label id="id">ID</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input id="id" name="id" type="text" [(ngModel)]="usuario.id" placeholder="ID preenchido automaticamente"
+			readonly>
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<label id="nome">Nome</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input id="nome" name="nome" [(ngModel)]="usuario.nome" type="text" required>
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<label id="login">Login</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input id="login" name="login" [(ngModel)]="usuario.login" type="text" required>
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<label id="senha">Senha</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input id="senha" name="senha" [(ngModel)]="usuario.senha" type="password" required>
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<label id="cpf">CPF</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input matInput id="cpf" [mask]="getCpfMask()" name="cpf" [(ngModel)]="usuario.cpf" type="text" required>
+	</div>
+
+
+	<div class="d-flex justify-content-center">
+		<button type="button" class="btn btn-success" id="limpar" (click)="limpar()">Limpar</button>
+		<button type="button" class="btn btn-success" id="enviar" (click)="salvarUser()">Enviar</button>
+	</div>
+</form>
+<hr>

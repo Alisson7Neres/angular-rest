@@ -1,0 +1,35 @@
+   html, body{
+	   background-color: darkslateblue;
+	   height: 80vh;
+   }
+   @media(max-width: 1000px){
+	html, body{
+		height: 85vh;
+	}
+   }
+   form{
+	padding: 15% 37% 10% 37%;
+    }
+	button{
+		float: right;
+		margin: 5px;
+	}
+	footer{
+		top: 500px;
+		
+	}
+	label,a {
+		color: darkorange;
+		font-weight: bold;
+	}
+	a:hover{
+		color: yellow;
+	}
+	.ng-valid[required], ng-valid.required{
+		border-left: 5px solid forestgreen;
+	}
+	.ng-invalid:not(form){
+		border-left: 5px solid red;
+	}
+	
+
