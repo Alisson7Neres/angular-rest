@@ -12,6 +12,7 @@ export class UsuarioComponent implements OnInit {
 
   students: Observable<User[]>;
   nome: string;
+  verLista: boolean;
 
   constructor(private usuarioService: UsuarioService) {
 
@@ -24,17 +25,24 @@ export class UsuarioComponent implements OnInit {
   }
 
   deleteUsuario(id: number) {
-    this.usuarioService.deletarUsuario(id).subscribe(data => {
-      console.log("Retorno do metódo delete : " + data);
 
-      this.usuarioService.getStudentList().subscribe(data => {
-        this.students = data;
+    if (confirm('Deseja mesmo remover?')) {
+
+      this.usuarioService.deletarUsuario(id).subscribe(data => {
+        console.log("Retorno do metódo delete : " + data);
+
+        this.usuarioService.getStudentList().subscribe(data => {
+          this.students = data;
+        });
       });
-    });
+    }
   }
   consultarUser() {
     this.usuarioService.consultarUser(this.nome).subscribe(data => {
       this.students = data;
     });
+  }
+  mostrarUsers(): boolean {
+    return this.verLista = ! this.verLista;
   }
 }

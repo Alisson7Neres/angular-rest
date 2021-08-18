@@ -2,11 +2,15 @@
   <div class="form-group mx-sm-3 mb-2">
     <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Pesquisar por nome">
   </div>
-  <button type="button" (click)="consultarUser()" class="btn btn-primary mb-2">Pesquisar usuário</button>
+  <button type="button" (click)="consultarUser()" id="consultar" class="btn btn-primary mb-2">Pesquisar usuário</button>
 </form>
-<button type="button" class="btn btn-primary" id="novo" [routerLink]="['/usuarioAdd']" style="margin: -70px 600px 30px;">Criar novo usuário</button>
+<div>
 
-<table class="table table-success table-striped">
+	<button type="button" class="btn btn-primary" id="novo" [routerLink]="['/usuarioAdd']">Criar novo usuário</button>
+	<button type="button" class="btn btn-warning" id="mostrar" (click)="mostrarUsers()">Mostrar</button>
+</div>
+
+<table class="table table-success table-striped" id="tabela">
 	<thead>
 		<tr>
 			<th scope="col">ID</th>
@@ -17,7 +21,7 @@
 		</tr>
 	</thead>
 
-	<tbody>
+	<tbody [hidden]="!verLista"> 
 		<tr *ngFor="let student of students">
 			<td>{{student.id}}</td>
 			<td>{{student.nome}}</td>
