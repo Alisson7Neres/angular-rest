@@ -43,6 +43,7 @@ export class UsuarioComponent implements OnInit {
     });
   }
   mostrarUsers(): boolean {
-    return this.verLista = ! this.verLista;
+    return this.verLista = !this.verLista;
   }
+
 }

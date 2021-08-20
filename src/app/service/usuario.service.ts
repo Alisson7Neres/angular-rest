@@ -30,6 +30,12 @@ export class UsuarioService {
   updateUser(user): Observable<any> {
     return this.http.put<any>(AppConstants.baseUrl, user)
   }
+  excluirTelefone(id): Observable<any> {
+    return this.http.delete(AppConstants.baseUrl + "telefone/" + id, { responseType: 'text' })
+  }
+  salvarTelefone(telefone): Observable<any> {
+    return this.http.post<any>(AppConstants.baseUrl, telefone)
+  }
   userAutenticado() {
     if (localStorage.getItem('token') !== null &&
       localStorage.getItem('token').toString().trim() !== null) {

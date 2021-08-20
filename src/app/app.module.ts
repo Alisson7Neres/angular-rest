@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
 
 // Requisições Ajax
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -20,12 +20,12 @@ import { UsuarioAddComponent } from './components/usuario/usuario-add/usuario-ad
 import { GuardiaoGuard } from './service/guardiao.guard';
 
 export const appRouters: Routes = [
-  {path : 'home' , component : HomeComponent, canActivate: [GuardiaoGuard]},
-  {path: 'login', component : LoginComponent},
-  {path: '', component : LoginComponent},
-  {path: 'usuarioList', component : UsuarioComponent, canActivate: [GuardiaoGuard]},
-  {path: 'usuarioAdd', component : UsuarioAddComponent, canActivate: [GuardiaoGuard]},
-  {path: 'usuarioAdd/:id', component : UsuarioAddComponent, canActivate: [GuardiaoGuard]}
+  { path: 'home', component: HomeComponent, canActivate: [GuardiaoGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
+  { path: 'usuarioList', component: UsuarioComponent, canActivate: [GuardiaoGuard] },
+  { path: 'usuarioAdd', component: UsuarioAddComponent, canActivate: [GuardiaoGuard] },
+  { path: 'usuarioAdd/:id', component: UsuarioAddComponent, canActivate: [GuardiaoGuard] }
 ];
 
 const maskConfig: Partial<IConfig> = {
