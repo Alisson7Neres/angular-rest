@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
@@ -48,6 +49,7 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
     routes,
     HttpInterceptorModule,
     NgxMaskModule.forRoot(maskConfig),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

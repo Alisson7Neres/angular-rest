@@ -24,6 +24,9 @@ export class UsuarioService {
   getStudent(id): Observable<any> {
     return this.http.get<any>(AppConstants.baseUrl + id);
   }
+  getStudentListPage(pagina): Observable<any> {
+    return this.http.get<any>(AppConstants.baseUrl + 'page/' + pagina);
+  }
   salvarUser(user): Observable<any> {
     return this.http.post<any>(AppConstants.baseUrl, user)
   }
