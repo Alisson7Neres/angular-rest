@@ -21,6 +21,9 @@ export class UsuarioService {
   consultarUser(nome: String): Observable<any> {
     return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome)
   }
+  consultarUserPorPage(nome: String, page: Number): Observable<any> {
+    return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome + "/page/" + page)
+  }
   getStudent(id): Observable<any> {
     return this.http.get<any>(AppConstants.baseUrl + id);
   }

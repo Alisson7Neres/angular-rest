@@ -27,31 +27,46 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
-  deleteUsuario(id: number, index: number) {
+  deleteUsuario(id: number, index) {
 
     if (confirm('Deseja mesmo remover?')) {
 
       this.usuarioService.deletarUsuario(id).subscribe(data => {
 
         // Remover da tela
-      this.students.splice(index, 1);
+        this.students.splice(index, 1);
       });
     }
   }
   consultarUser() {
-    this.usuarioService.consultarUser(this.nome).subscribe(data => {
-      this.students = data.content;
-      this.total = data.totalElements;
-      console.info(this.nome);
-    });
+    if (this.nome === '') {
+      this.usuarioService.getStudentList().subscribe(data => {
+        this.students = data.content;
+        this.total = data.totalElements;
+      });
+    } else {
+
+      this.usuarioService.consultarUser(this.nome).subscribe(data => {
+        this.students = data.content;
+        this.total = data.totalElements;
+      });
+    }
   }
   mostrarUsers(): boolean {
     return this.verLista = !this.verLista;
   }
   carregarPagina(pagina) {
-    this.usuarioService.getStudentListPage(pagina - 1).subscribe(data => {
-      this.students = data.content;
-      this.total = data.totalElements;
-    });
+    if (this.nome !== '') {
+      this.usuarioService.consultarUserPorPage(this.nome, (pagina -1)).subscribe(data => {
+        this.students = data.content;
+        this.total = data.totalElements;
+      });
+    } else {
+
+      this.usuarioService.getStudentListPage(pagina - 1).subscribe(data => {
+        this.students = data.content;
+        this.total = data.totalElements;
+      });
+    }
   }
 }

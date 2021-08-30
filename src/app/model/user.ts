@@ -10,11 +10,4 @@ export class User {
 
 	telefones: Array<Telefone>;
 
-	User(id: number, login: string, nome: string, cpf: string, senha: string) {
-		this.id = id;
-		this.login = login;
-		this.nome = nome;
-		this.cpf = cpf;
-		this.senha = senha;
-	}
 }
