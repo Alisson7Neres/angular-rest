@@ -39,6 +39,13 @@
 		<input matInput id="cpf" [mask]="getCpfMask()" name="cpf" [(ngModel)]="usuario.cpf" type="text">
 	</div>
 
+	<div class="row d-flex justify-content-center">
+		<label>Data de nascimento</label>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input matInput id="nascimento" [(ngModel)]="usuario.nascimento" type="date" name="nascimento">
+	</div>
+
 	<div class="row dflex justify-content-center">
 		<label>Telefone Contato</label>
 	</div>

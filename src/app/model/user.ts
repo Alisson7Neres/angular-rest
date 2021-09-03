@@ -7,6 +7,7 @@ export class User {
 	nome: String;
 	cpf: String;
 	senha: String;
+	nascimento: String;
 
 	telefones: Array<Telefone>;
 

@@ -51,6 +51,9 @@ export class UsuarioAddComponent implements OnInit {
    getNumeroMask(): string {
     return '(00) 0 0000-0000 ';
   }
+  getNascimentoMask(): string {
+    return '00/00/0000';
+  }
 
 
   excluirTelefone(id, i) {
