@@ -19,6 +19,7 @@ import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { UsuarioComponent } from './components/usuario/usuario/usuario.component';
 import { UsuarioAddComponent } from './components/usuario/usuario-add/usuario-add.component';
 import { GuardiaoGuard } from './service/guardiao.guard';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 export const appRouters: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [GuardiaoGuard] },
@@ -49,7 +50,8 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
     routes,
     HttpInterceptorModule,
     NgxMaskModule.forRoot(maskConfig),
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxCurrencyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

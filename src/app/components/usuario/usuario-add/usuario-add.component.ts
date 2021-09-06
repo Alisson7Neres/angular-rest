@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/model/User';
 import { UsuarioService } from 'src/app/service/usuario.service';
-import { Telefone } from 'src/app/model/telefone';
+import { Telefone } from 'src/app/model/Telefone';
+import { Profissao } from 'src/app/model/Profissao';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,17 @@ export class UsuarioAddComponent implements OnInit {
 
   telefone = new Telefone();
 
+  profissoes : Array<Profissao>;
+
   constructor(private routeActive: ActivatedRoute, private userService: UsuarioService) {
   }
   ngOnInit() {
+
+    this.userService.getProfissaoList().subscribe(data => {
+      this.profissoes = data;
+      console.log(this.profissoes)
+    });
+
     // variável id vai ser carregada quando o id não for nulo, se nulo, vai para novo.
     let id = this.routeActive.snapshot.paramMap.get('id');
 

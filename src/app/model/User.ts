@@ -1,4 +1,5 @@
-import { Telefone } from './telefone';
+import { Profissao } from './Profissao';
+import { Telefone } from './Telefone';
 
 export class User {
 
@@ -8,7 +9,9 @@ export class User {
 	cpf: String;
 	senha: String;
 	nascimento: String;
+	salario: DoubleRange;
 
 	telefones: Array<Telefone>;
+	profissao: Profissao = new Profissao();
 
 }

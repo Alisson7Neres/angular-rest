@@ -69,12 +69,33 @@
 			</tbody>
 		</table>
 	</div>
+	<br />
+	<div class="row d-flex justify-content-center">
+		<label for="profissao">Profissões</label>
+		<span style="color:red" *ngIf="profissaoValidade.invalid">*</span>
+	</div>
+	<div class="row dflex justify-content-center">
+		<select [(ngModel)]="usuario.profissao.id" id="profissao" name="profissao" #profissaoValidade="ngModel"
+			required>
+			<option [ngValue]="p.id" *ngFor="let p of profissoes">{{p.descricao}}</option>
+		</select>
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<label for="salario">Salário</label>
+		<span style="color:red">*</span>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<input [(ngModel)]="usuario.salario" id="salario" name="salario" type="text"
+		currencyMask [options]="{prefix : 'R$', thousands: '.', decimal : ','}">
+	</div>
 
 	<div class="d-flex justify-content-center">
 		<button type="button" class="btn btn-success" id="limpar" (click)="limpar()">Limpar</button>
 		<button type="button" [disabled]="formValidate.invalid" class="btn btn-success" id="enviar"
 			(click)="salvarUser()">Enviar</button>
 	</div>
+
 
 </form>
 <hr>

@@ -50,4 +50,8 @@ export class UsuarioService {
       return false;
     }
   }
+
+  getProfissaoList(): Observable<any> {
+    return this.http.get<any>(AppConstants.getBaseUrlPath + 'profissao/')
+  }
 }
