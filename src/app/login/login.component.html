@@ -19,8 +19,8 @@
       </div>
     </div>
 
-    <button id="btnAcessar" [disabled]="email.invalid || senha.invalid" type="button" class="btn btn-success" (click)="login()">Acessar</button>
-    <button id="btnRegistrar" type="button" class="btn btn-warning">Registrar</button>
+    <button id="btnAcessar" [disabled]="email.invalid || senha.invalid" type="button" class="btn btn-success" (click)="login();">Acessar</button>
+    <button id="btnRecuperar" [disabled]="email.invalid" type="button" class="btn btn-warning" (click)="recuperar();">Recuperar Acesso</button>
 
   </form>
 
