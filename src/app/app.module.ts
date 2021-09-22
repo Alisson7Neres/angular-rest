@@ -21,6 +21,8 @@ import { UsuarioAddComponent } from './components/usuario/usuario-add/usuario-ad
 import { GuardiaoGuard } from './service/guardiao.guard';
 import { NgxCurrencyModule } from 'ngx-currency';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
 export const appRouters: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [GuardiaoGuard] },
   { path: 'login', component: LoginComponent },
@@ -51,7 +53,8 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
     HttpInterceptorModule,
     NgxMaskModule.forRoot(maskConfig),
     NgxPaginationModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

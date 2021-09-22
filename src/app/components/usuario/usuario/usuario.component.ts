@@ -27,6 +27,15 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
   deleteUsuario(id: number, index) {
 
     if (confirm('Deseja mesmo remover?')) {
