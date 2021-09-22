@@ -78,4 +78,7 @@ export class UsuarioComponent implements OnInit {
       });
     }
   }
+  imprimirRelatorio() {
+    return this.usuarioService.downloadPdfRelatorio();
+  }
 }
