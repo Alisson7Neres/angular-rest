@@ -11,14 +11,15 @@
 	padding: 15% 37% 10% 37%;
     }
 	button{
-		float: right;
+		float: left;
 		margin: 5px;
 	}
 	footer{
 		top: 500px;
+		height: 200px;
 		
 	}
-	label,a {
+	label, #aSuporte {
 		color: darkorange;
 		font-weight: bold;
 	}
@@ -31,5 +32,10 @@
 	.ng-invalid:not(form){
 		border-left: 5px solid red;
 	}
-	
+	svg{
+		margin-left: 5px;
+	}
+	#divButton{
+		display: inline;
+	}
 

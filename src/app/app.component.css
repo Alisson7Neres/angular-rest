@@ -1,17 +1,16 @@
-@media(max-width: 1000px){
+/*@media(max-width: 1000px){
 	header{
 		display: block;
 	}
-}
+}*/
 nav{
 	background-color: black;
 }
-#home, #sair, #navbarDropdown, #dropdown{
+a{
 	color: darkorange;
 	font-weight: bold;
 }
-#usuarios{
-	padding: 8px;
-	color: darkorange;
-	font-weight: bold;
+
+a{
+	display: inline-block;
 }

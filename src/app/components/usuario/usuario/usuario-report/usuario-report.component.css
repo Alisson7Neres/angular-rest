@@ -1,0 +1,18 @@
+form{
+margin-top: 50px;
+}
+label{
+	color: darkorange;
+	font-weight: bold;
+}
+button{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+hr{
+	margin-top: 400px;
+}
+span{
+	margin-left: 10px;
+	color: red;
+}
