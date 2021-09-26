@@ -1,89 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { User } from 'src/app/model/User';
+import { UserReport } from 'src/app/model/UserReport';
 import { UsuarioService } from 'src/app/service/usuario.service';
-import { Telefone } from 'src/app/model/Telefone';
-import { Profissao } from 'src/app/model/Profissao';
 
 @Component({
   selector: 'app-root',
   templateUrl: './usuario-report.component.html',
   styleUrls: ['./usuario-report.component.css']
 })
-export class UsuarioReportComponent implements OnInit {
+export class UsuarioReportComponent {
 
-  usuario = new User();
-
-  telefone = new Telefone();
-
-  profissoes : Array<Profissao>;
+  userReport = new UserReport;
 
   constructor(private routeActive: ActivatedRoute, private userService: UsuarioService) {
   }
   ngOnInit() {
 
-    this.userService.getProfissaoList().subscribe(data => {
-      this.profissoes = data;
-      console.log(this.profissoes)
-    });
-
-    // variável id vai ser carregada quando o id não for nulo, se nulo, vai para novo.
-    let id = this.routeActive.snapshot.paramMap.get('id');
-
-    if (id != null) {
-      this.userService.getStudent(id).subscribe(data => {
-        this.usuario = data;
-      });
-    }
   }
 
-  salvarUser() {
-    // Atualizando ou editando
-    if (this.usuario.id != null && this.usuario.id.toString().trim() != null) {
-      this.userService.updateUser(this.usuario).subscribe(data => {
-        this.limpar();
-      });
-    } else {
-      this.userService.salvarUser(this.usuario).subscribe(data => {
-        this.limpar();
-      });
-    }
-  }
-
-  limpar() {
-    this.usuario = new User();
-  }
-
-  getCpfMask(): string {
-    return '000.000.000-00';
-  }
-   getNumeroMask(): string {
-    return '(00) 0 0000-0000 ';
-  }
   getNascimentoMask(): string {
     return '00/00/0000';
   }
 
-
-  excluirTelefone(id, i) {
-
-    if (id == null) {
-      this.usuario.telefones.splice(i, 1);
-      return;
-    }
-
-    if (id !== null && confirm('Deseja remover?')) {
-      this.userService.excluirTelefone(id).subscribe(data => {
-        this.usuario.telefones.splice(i, 1);
-      });
-    }
+  imprimiRelatorio(){
+    console.log(this.userReport)
+    this.userService.downloadPdfRelatorioParam(this.userReport);
   }
 
-  addFone() {
-    if (this.usuario.telefones === undefined) {
-      this.usuario.telefones = new Array<Telefone>();
-    }
-    this.usuario.telefones.push(this.telefone);
-    this.telefone = new Telefone();
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
   }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
 }

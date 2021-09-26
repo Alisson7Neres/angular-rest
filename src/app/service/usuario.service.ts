@@ -58,4 +58,9 @@ export class UsuarioService {
       document.querySelector('iframe').src = data;
     })
   }
+  downloadPdfRelatorioParam(UserReport) {
+    return this.http.post(AppConstants.baseUrl + "relatorio/" , UserReport , {responseType : 'text'}).subscribe(data => {
+      document.querySelector('iframe').src = data;
+    })
+  }
 }

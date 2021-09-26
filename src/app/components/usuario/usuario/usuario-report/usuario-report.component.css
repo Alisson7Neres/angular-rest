@@ -9,10 +9,17 @@ button{
 	margin-top: 10px;
 	margin-left: 10px;
 }
-hr{
-	margin-top: 400px;
-}
+
 span{
 	margin-left: 10px;
 	color: red;
+}
+h3{
+	margin-top: 50px;
+	text-align: center;
+	color: darkorange;
+
+}
+hr{
+	margin-top:20px;
 }
